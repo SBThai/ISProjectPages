@@ -1,0 +1,132 @@
+/* 1. Basic page styles */
+:root {
+    /* complementary colors */
+    --comp-bg: #8a866d86;    /* complement of whitesmoke */
+    --comp-text: maroon;  /* complement of maroon */
+  }
+ 
+  body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+                 'Lucida Sans', Arial, sans-serif;
+    background-color: whitesmoke;  
+    color: maroon;                  
+    margin: 0;
+    padding: 0;
+  }
+ 
+  /* 2. Header stays as-is */
+  #header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #8a866d86;
+  }
+ 
+  .professional-link {
+    text-decoration: none;
+    font-weight: bold;
+    color: inherit;
+  }
+  .professional-link:hover {
+    text-decoration: underline;
+  }
+ 
+  /* 3. Content */
+#content {
+    text-align: center;
+  }
+ 
+ 
+  #content ul {
+    display: inline-block; /* shrink-wrap so #content{text-align:center} works */
+    text-align: left;
+    margin: 2;
+    padding-left: 1em;     /* indent the bullets a bit */
+  }
+ 
+  /* 2. Make the nested ordered lists indent under their parent <li> */
+  #content ul ol {
+    display: block;        /* normal block so it doesn’t try to center */
+    margin: 1em 0 1em 1.5em;  /* top/bottom space + left indent */
+    padding: 0;
+    list-style-position: outside;
+  }
+ 
+  /* 3. Tweak your <li> so the number/bullet sits tight against the text */
+  #content li {
+    list-style-position: inside;
+    padding-left: 0.2em;   /* small gap between marker & text */
+    margin: 0.5em 0;       /* vertical breathing room between items */
+  }
+
+
+ 
+  /* 4. Footer */
+  #footer {
+    text-align: center;
+    background-color: var(--comp-bg);
+    color: var(--comp-text);
+  }
+ 
+  /* Image styling with complement */
+  img.custom-image {
+    max-width: 60%;
+    height: auto;
+    border: 2px solid var(--comp-text);
+  }
+ 
+  /* Tableau styling */
+  #tableauViz {
+    text-align: center;            
+  }
+ 
+  #tableauViz .tableauPlaceholder {
+    display: inline-block;          
+    margin: 0 auto;                  
+  }
+ 
+  #tableauViz .tableauPlaceholder object {
+    display: inline-block !important;/* override any inline styles */
+    max-width: 100%;                
+  }
+
+
+ 
+
+
+  /* Video container for responsive embed */
+  .video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+  .video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 50%;                /* move the left edge to the 50% mark */
+    width: 60%;               /* whatever size you want */
+    height: 60%;
+    transform: translateX(-50%); /* shift it back by half its width */
+  }
+ 
+  /* Link styling with complement */
+  a {
+    color: var(--comp-text);
+    text-decoration: none;
+  }
+ 
+  /* 8. Button override with complement */
+  .btn-outline-primary {
+    border-color: var(--comp-text);
+    color: var(--comp-text);
+  }
+  .btn-outline-primary:hover {
+    background-color: var(--comp-text);
+    color: #fff;
+  }
+
+
+
